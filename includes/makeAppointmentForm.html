@@ -1,0 +1,25 @@
+
+    <h1> Make an Appointment </h1>
+    <form name="addtitle" method="post" action=""<?php $PHP_SELF?>">
+    
+    <select name="Doctor">
+    <option disabled selected>-- Select Doctor --</option>
+    <?php
+        include "conn.php";  // Using database connection file here
+        $records = mysqli_query($mysqli, "SELECT Dname FROM Doctor");  // Use select query here 
+
+        while($Doctor = mysqli_fetch_array($records))
+        {
+            echo "<option value='". $Doctor['Dname'] ."'>" .$Doctor['Dname'] ."</option>";  // displaying data in option menu
+        }	
+    ?>  
+  </select><br/>
+        <br>
+    
+      
+      <input type="text" placeholder="Date" name="Date">
+      <input type="text" placeholder="Time" name="Time"><br /><br />
+      
+    
+      <input type="submit" value="Submit" name="Appointment">
+    </form>  

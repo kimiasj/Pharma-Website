@@ -1,0 +1,33 @@
+<html>
+  <head>	
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  </head>
+
+  <body>
+    <div id="page">
+      <div id="content">
+        <h1>Welcome to Prescriptions R-X Chain Portal</h1>
+	<p>Login to Use Our Online Portal</p>
+										
+	<form name="login"
+              action="http://localhost/Pharma/php/login.php"
+              method="post">
+	  <input type="text" placeholder="Username" name="username">
+	  <input type="password" placeholder="Password" name="password">
+	  <input type="submit" value="Login" name="login"><br/><br />
+	  
+	   <input type="radio" name="choice" value="Doctor" checked>
+		<label for="Doctor">Doctor</label>	
+
+        <input type="radio" name="choice" value="Patient">
+		<label for="Patient">Patient</label>
+	
+        <input type="radio" name="choice" value="pharmacist">
+		<label for="pharmacist">Pharmacist</label>
+
+	  
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+
+    <h1>Find Your Prescription </h1>
+
+    <form name="search" method="post" action="<?php $PHP_SELF?>">
+ <select name="Doctor">
+    <option disabled selected>-- Select Doctor --</option>
+    <?php
+        include "conn.php";  // Using database connection file here
+        $records = mysqli_query($mysqli, "SELECT Dname FROM Doctor");  // Use select query here 
+
+        while($Doctor = mysqli_fetch_array($records))
+        {
+            echo "<option value='". $Doctor['Dname'] ."'>" .$Doctor['Dname'] ."</option>";  // displaying data in option menu
+        }	
+    ?>  
+  </select><br/><br/>
+		
+		
+		
+        <input type="submit" value="Search" name="Prescription"><br/><br />
+ 	
+        
+  </form>
+  

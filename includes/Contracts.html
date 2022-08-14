@@ -1,0 +1,36 @@
+<h1> Contract Form</h1>
+<form name="Log" method="post" action="<?php $PHP_SELF?>">
+
+<input type="text" placeholder="Enter  Contract Number" name="contractNo">
+
+<input type="text" placeholder="Enter Trade Name" name="tradename">
+ 
+  <input type="text" placeholder="Enter Formula" name="formula">
+  
+  <input type="text" placeholder="Enter Date of Issue" name="startdate">
+ 
+  <input type="text" placeholder="Enter Date of Expiry" name="enddate">
+   
+    
+  <br/><br />
+  
+  <select name="pharmaco">
+    <option disabled selected>-- Select Pharmaceutical Co --</option>
+    <?php
+        include "conn.php";  
+        $records = mysqli_query($mysqli, "SELECT phcname FROM pharmaco");
+
+        while($pharmaco = mysqli_fetch_array($records))
+        {
+            echo "<option value='". $pharmaco['phcname'] ."'>" .$pharmaco['phcname'] ."</option>";  
+        }	
+    ?>  
+  </select><br/>
+        <br>
+     
+
+
+ 
+  <input type="submit" value="Submit" name="contracts"><br/><br />
+
+</form>
